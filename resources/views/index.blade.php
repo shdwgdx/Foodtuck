@@ -26,36 +26,32 @@
 
 <body class="antialiased">
     @livewire('notifications')
+    @foreach ($products as $product)
+        {{ $product->category }}
+    @endforeach
     <section class="min-h-[950px] h-full bg-center bg-no-repeat bg-cover "
         style="background-image: url('{{ @asset('images/headerbg.png') }}')">
         <div class="container mx-auto pt-11">
             <h1 class="text-center text-2xl font-bold font-['Helvetica'] text-white mb-4"><span class="text-[#FF9F0D]">
                     Фуд</span>так
             </h1>
+
             <div class="flex justify-between items-center mb-[161px]">
                 <nav class="max-w-[507px] w-full mr-5">
                     <ul class="flex justify-between text-base font-bold font-['Inter']  last:text-white">
-                        <li class="text-[#FF9F0D]"><a href="">Главная</a></li>
-                        <li><a href="">Меню</a></li>
-                        <li><a href="">Магазин</a></li>
-                        <li><a href="">О нас</a></li>
-                        <li><a href="">Контакты</a></li>
+                        <li class="text-[#FF9F0D]"><a href="{{ route('index') }}">Главная</a></li>
+                        <li><a href="{{ route('menu') }}">Меню</a></li>
+                        <li><a href="{{ route('shop') }}">Магазин</a></li>
+                        <li><a href="{{ route('about') }}">О нас</a></li>
+                        <li><a href="{{ route('contacts') }}">Контакты</a></li>
                     </ul>
                 </nav>
 
 
-                <div class="flex justify-between items-center w-[380px]">
-                    <form class="w-full max-w-[310px]">
-                        <div class="relative  ">
-                            <input type="text" id="default-search"
-                                class="block text-white w-full p-4 text-sm bg-inherit border border-solid border-[#FF9F0D] rounded-full focus:border-red-700"
-                                placeholder="Search..." required>
-                            <button type="submit" class="text-white absolute right-2.5 bottom-3.5"><img
-                                    src="{{ asset('images/Search.svg') }}" alt="Search"></button>
-                        </div>
-                    </form>
-                    <a href="#"><img src="{{ asset('images/User.svg') }}" alt="User"></a>
+                <div class="flex justify-between items-center w-[99px]">
+                    <a href="#"><img src="{{ asset('images/Search.svg') }}" alt="Likest" class="w-5 h-5"></a>
                     <a href="#"><img src="{{ asset('images/Basket.svg') }}" alt="Backet"></a>
+                    <a href="#"><img src="{{ asset('images/User.svg') }}" alt="User"></a>
                 </div>
             </div>
             <div class="flex justify-between mb-[82px]">

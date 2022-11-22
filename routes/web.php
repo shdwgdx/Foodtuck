@@ -15,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [SiteController::class, 'index'])->name('index');
-Route::get('/shop', [SiteController::class, 'shop'])->name('shop');
+
+Route::prefix('/')->group(function () {
+    Route::get('', [SiteController::class, 'index'])->name('index');
+    Route::get('shop', [SiteController::class, 'shop'])->name('shop');
+    Route::get('menu', [SiteController::class, 'menu'])->name('menu');
+    Route::get('about', [SiteController::class, 'about'])->name('about');
+    Route::get('contacts', [SiteController::class, 'contacts'])->name('contacts');
+});
