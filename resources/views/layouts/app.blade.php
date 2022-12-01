@@ -89,7 +89,6 @@
         {{ $slot }}
     @endisset
 
-
 </body>
 
 </html>

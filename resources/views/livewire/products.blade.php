@@ -1,6 +1,6 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     @foreach ($products as $product)
-        <div class="mr-6 mb-6 relative">
+        <div class="relative mb-6 mr-6">
             <div class="absolute top-[45%] left-[35%] text-white flex">
                 <h1 class="mr-3">Hello</h1>
                 <h1>olleH</h1>
